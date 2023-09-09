@@ -62,7 +62,7 @@ fi
 echo "Installing SecList"
 
 sudo apt install git
-mkdir ~/a;cd ~/a;git clone https://github.com/danielmiessler/SecLists.git
+mkdir ~/Tools;cd ~/Tools;git clone https://github.com/danielmiessler/SecLists.git
 
 # Installing SearchSploit
 echo "Installing SearchSploit"
