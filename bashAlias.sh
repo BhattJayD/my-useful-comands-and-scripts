@@ -27,6 +27,7 @@ if [ $# -eq 1 ]; then
     echo "alias ovpn='sudo openvpn ~/vpn/SplitUnknown.ovpn'" >> $1
     echo "alias pc='function pc() { ping "$1" "$2"; }; pc'" >> $1
     echo "alias clone='function clone() { git clone "$1"; }; clone'" >> $1
+    echo "alias initial='nmap -Pn -sVC -oN initial -A -vv'" >> $1
 
 else
 
@@ -55,6 +56,7 @@ else
     echo "alias ovpn='sudo openvpn ~/vpn/SplitUnknown.ovpn'" >> ~/.bashrc
     echo "alias pc='function pc() { ping "$1" "$2"; }; pc'" >> ~/.bashrc
     echo "alias clone='function clone() { git clone "$1"; }; clone'" >> ~/.bashrc
+    echo "alias initial='nmap -Pn -sVC -oN initial -A -vv'" >> ~/.bashrc
 fi
 
 
@@ -74,3 +76,6 @@ sudo ln -sf /opt/exploitdb/searchsploit /usr/local/bin/searchsploit
 # Installing hashid
 echo "Installing hashid"
 sudo apt install hashid
+
+echo "Installing smbclient"
+sudo apt install smbclient
