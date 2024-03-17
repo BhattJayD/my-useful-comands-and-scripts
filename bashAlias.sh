@@ -66,6 +66,9 @@ echo "Installing SecList"
 sudo apt install git
 mkdir ~/Tools;cd ~/Tools;git clone https://github.com/danielmiessler/SecLists.git
 
+sudo apt install usefull john srcs
+cd ~/Tools;git clone https://github.com/openwall/john.git
+
 # Installing SearchSploit
 echo "Installing SearchSploit"
 
@@ -83,11 +86,12 @@ sudo apt install smbclient
 echo "Installing terminator"
 sudo apt install terminator
 
-echo "Installing flameshot"
-sudo apt install flameshot
 
-echo "Installing ffuf dirb wfuzz gobuster"
-sudo apt install ffuf dirb wfuzz gobuster
+echo "Installing checksec"
+sudo apt install checksec
+
+echo "Installing ffuf dirb wfuzz gobuster nmap"
+sudo apt install fuzz dirb wfuzz gobuster nmap
 
 echo "creating dir for ctf's vpn files"
 mkdir ~/vpn
@@ -97,6 +101,13 @@ echo "Checking from snap... to install obsidian"
 
 echo "Checking from snap... to install keepassxc"
 [ -x "$(command -v snap)" ] && snap install keepassxc --classic || echo "snap not found"
+
+echo "Checking from snap... to install john-the-ripper"
+[ -x "$(command -v snap)" ] && snap install john-the-ripper --classic || echo "snap not found"
+
+echo "Installing flameshot"
+[ -x "$(command -v snap)" ] && snap install flameshot --classic || echo "snap not found"
+
 
 echo "download jadxgui from browser..."
 [ -x "$(command -v firefox)" ] && firefox https://github.com/skylot/jadx/releases || echo "firefox not found"
