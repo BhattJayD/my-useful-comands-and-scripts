@@ -86,6 +86,9 @@ sudo apt install terminator
 echo "Installing flameshot"
 sudo apt install flameshot
 
+echo "Installing ffuf dirb wfuzz gobuster"
+sudo apt install ffuf dirb wfuzz gobuster
+
 echo "creating dir for ctf's vpn files"
 mkdir ~/vpn
 
