@@ -88,3 +88,9 @@ sudo apt install flameshot
 
 echo "creating dir for ctf's vpn files"
 mkdir ~/vpn
+
+echo "Checking from snap... to install obsidian"
+[ -x "$(command -v snap)" ] && snap install obsidian --classic || echo "snap not found"
+
+echo "Checking from snap... to install keepassxc"
+[ -x "$(command -v snap)" ] && snap install keepassxc --classic || echo "snap not found"
