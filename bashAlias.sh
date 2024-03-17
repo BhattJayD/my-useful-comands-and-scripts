@@ -96,4 +96,4 @@ echo "Checking from snap... to install keepassxc"
 [ -x "$(command -v snap)" ] && snap install keepassxc --classic || echo "snap not found"
 
 echo "download jadxgui from browser..."
-[ -x "$(command -v firefox)" ] && firefox https://github.com/skylot/jadx/releases || echo "snap not firefox"
+[ -x "$(command -v firefox)" ] && firefox https://github.com/skylot/jadx/releases || echo "firefox not found"
