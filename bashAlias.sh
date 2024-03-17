@@ -79,3 +79,12 @@ sudo apt install hashid
 
 echo "Installing smbclient"
 sudo apt install smbclient
+
+echo "Installing terminator"
+sudo apt install terminator
+
+echo "Installing flameshot"
+sudo apt install flameshot
+
+echo "creating dir for ctf's vpn files"
+mkdir ~/vpn
