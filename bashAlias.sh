@@ -97,17 +97,21 @@ echo "creating dir for ctf's vpn files"
 mkdir ~/vpn
 
 echo "Checking from snap... to install obsidian"
-[ -x "$(command -v snap)" ] && snap install obsidian --classic || echo "snap not found"
+[ -x "$(command -v snap)" ] && sudo snap install obsidian --classic || echo "snap not found"
 
 echo "Checking from snap... to install keepassxc"
-[ -x "$(command -v snap)" ] && snap install keepassxc --classic || echo "snap not found"
+[ -x "$(command -v snap)" ] && sudo snap install keepassxc --classic || echo "snap not found"
 
 echo "Checking from snap... to install john-the-ripper"
-[ -x "$(command -v snap)" ] && snap install john-the-ripper --classic || echo "snap not found"
+[ -x "$(command -v snap)" ] && sudo snap install john-the-ripper --classic || echo "snap not found"
 
 echo "Installing flameshot"
-[ -x "$(command -v snap)" ] && snap install flameshot --classic || echo "snap not found"
+[ -x "$(command -v snap)" ] && sudo snap install flameshot --classic || echo "snap not found"
 
 
 echo "download jadxgui from browser..."
 [ -x "$(command -v firefox)" ] && firefox https://github.com/skylot/jadx/releases || echo "firefox not found"
+
+
+echo "Installing docker"
+[ -x "$(command -v snap)" ] && sudo snap install docker || echo "snap not found"
