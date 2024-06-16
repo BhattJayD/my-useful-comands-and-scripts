@@ -115,3 +115,6 @@ echo "download jadxgui from browser..."
 
 echo "Installing docker"
 [ -x "$(command -v snap)" ] && sudo snap install docker || echo "snap not found"
+
+echo "Installing sqlmap"
+[ -x "$(command -v snap)" ] && sudo snap install sqlmap || echo "snap not found"
