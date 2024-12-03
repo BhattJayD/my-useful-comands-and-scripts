@@ -28,6 +28,7 @@ if [ $# -eq 1 ]; then
     echo "alias pc='function pc() { ping "$1" "$2"; }; pc'" >> $1
     echo "alias clone='function clone() { git clone "$1"; }; clone'" >> $1
     echo "alias initial='nmap -Pn -sVC -oN initial -A -vv'" >> $1
+    echo "alias full='nmap -Pn -p- --min-rate 10000 -oN full -vv'" >> $1
 
 else
 
@@ -57,6 +58,8 @@ else
     echo "alias pc='function pc() { ping "$1" "$2"; }; pc'" >> ~/.bashrc
     echo "alias clone='function clone() { git clone "$1"; }; clone'" >> ~/.bashrc
     echo "alias initial='nmap -Pn -sVC -oN initial -A -vv'" >> ~/.bashrc
+    echo "alias full='nmap -Pn -p- --min-rate 10000 -oN full -vv'" >> ~/.bashrc
+
 fi
 
 
