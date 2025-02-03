@@ -69,7 +69,7 @@ echo "Installing SecList"
 sudo apt install git
 mkdir ~/Tools;cd ~/Tools;git clone https://github.com/danielmiessler/SecLists.git
 
-sudo apt install usefull john srcs
+echo install usefull john srcs
 cd ~/Tools;git clone https://github.com/openwall/john.git
 
 # Installing SearchSploit
