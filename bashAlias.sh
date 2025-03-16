@@ -121,3 +121,24 @@ echo "Installing docker"
 
 echo "Installing sqlmap"
 [ -x "$(command -v snap)" ] && sudo snap install sqlmap || echo "snap not found"
+
+
+# Adding scan() function to ~/.bashrc
+echo "scan() {" >> $1
+echo "    if ping -c 1 \"\$1\" &>/dev/null; then" >> $1
+echo "        echo \"[+] Host is up. Starting full scan...\"" >> $1
+echo "        nmap -Pn -p- --min-rate 10000 -oN full -vv \"\$1\"" >> $1
+echo "" >> $1
+echo "        open_ports=\$(grep /tcp full | awk '{print \$1}' | cut -d'/' -f1 | paste -sd,)" >> $1
+echo "" >> $1
+echo "        if [[ -n \"\$open_ports\" ]]; then" >> $1
+echo "            echo \"[+] Open ports found: \$open_ports\"" >> $1
+echo "            echo \"[+] Starting initial scan on open ports...\"" >> $1
+echo "            nmap -Pn -sVC -oN initial -A -vv -p \"\$open_ports\" \"\$1\"" >> $1
+echo "        else" >> $1
+echo "            echo \"[-] No open ports found in full scan.\"" >> $1
+echo "        fi" >> $1
+echo "    else" >> $1
+echo "        echo \"[-] Host is down or unreachable.\"" >> $1
+echo "    fi" >> $1
+echo "}" >> $1
